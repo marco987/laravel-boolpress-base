@@ -10,6 +10,8 @@ class ControllerCategory extends Controller
 {
   public function index(){
 
-    return view('home-page');
+    $categories = Category::all();
+
+    return view('home-page', compact('categories'));
   }
 }
