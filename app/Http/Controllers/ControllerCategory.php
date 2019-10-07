@@ -11,7 +11,8 @@ class ControllerCategory extends Controller
   public function index(){
 
     $categories = Category::all();
+    $posts = Post::all();
 
-    return view('home-page', compact('categories'));
+    return view('home-page', compact('categories', 'posts'));
   }
 }

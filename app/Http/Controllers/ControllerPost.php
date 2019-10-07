@@ -15,7 +15,9 @@ class ControllerPost extends Controller
      */
     public function index()
     {
-        //
+      $posts = Post::all();
+
+      return view('home-page', compact('posts'));
     }
 
     /**
