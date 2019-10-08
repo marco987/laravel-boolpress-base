@@ -11,7 +11,7 @@
 
       <div class="box">
         <h5>{{$post -> title}}</h5>
-        <p>{{$post -> text}}</p>
+        <a href="{{Route('show.post', $post -> id)}}">Leggi questo post</a>
       </div>
 
     @endforeach

@@ -56,6 +56,15 @@ class ControllerPost extends Controller
       return view('category-home', compact('category', 'posts'));
     }
 
+    public function showSinglePost($id)
+    {
+      //$category = Category::findOrFail($id);
+      $posts = Post::where('id', $id)->first();
+      //dd($posts);
+
+      return view('single-post', compact('posts'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
