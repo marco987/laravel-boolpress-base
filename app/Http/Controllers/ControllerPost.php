@@ -67,7 +67,9 @@ class ControllerPost extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = Post::findOrFail($id);
+
+      return view('edit-post', compact('post'));
     }
 
     /**
@@ -79,7 +81,15 @@ class ControllerPost extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      //dd($request->all());
+      $datiVerificati = $request -> validate([
+        'category_id' => 'required',
+        'title' => 'required',
+        'text' => 'required'
+      ]);
+      Post::whereId($id) -> update($datiVerificati);
+
+      return redirect('/');
     }
 
     /**

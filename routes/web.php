@@ -7,4 +7,8 @@ Route::get('/post/{id}', 'ControllerPost@showSinglePost')->name('show.post');
 
 Route::get('/admin/post/create', 'ControllerPost@create')->name('create.post');
 Route::post('/store', 'ControllerPost@store')->name('store.post');
+
+Route::get('/admin/post/{id}/edit/', 'ControllerPost@edit')->name('edit.post');
+Route::post('/{id}/update', 'ControllerPost@update')->name('update.post');
+
 Route::get('/{id}/destroy', 'ControllerPost@destroy')->name('destroy.post');
