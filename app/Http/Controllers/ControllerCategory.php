@@ -11,8 +11,8 @@ class ControllerCategory extends Controller
   public function index(){
 
     $categories = Category::all();
-    $posts = Post::all();
+    $lastsPost = Post::orderBy('updated_at', 'DESC')->take(5)->get();
 
-    return view('home-page', compact('categories', 'posts'));
+    return view('home-page', compact('categories', 'lastsPost'));
   }
 }

@@ -25,9 +25,25 @@ header, footer {
 }
 
 main {
+  height: 100%;
   width: 100%;
   padding: 0 20px;
   overflow: auto;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box-ultimipost {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box-categorie {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -35,16 +51,19 @@ main {
 }
 
 .box {
-  width: 300px;
+  width: 200px;
   margin: 20px;
   padding: 10px;
   border: solid purple 2px;
   border-radius: 10px;
-}
+  text-align: center;
 
-.category-color {
-  margin: 10px auto;
-  width: 50px;
-  height: 20px;
-  border: solid black 1px;
+  h5 {
+    margin-bottom: 5px;
+  }
+
+  .category-color {
+    height: 15px;
+    border: solid black 1px;
+  }
 }

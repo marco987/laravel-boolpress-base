@@ -32,7 +32,7 @@ class CreateForeignTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
           $table -> dropForeign('category');
-          $table -> dropColumn('category-id');
+          $table -> dropColumn('category_id');
         });
     }
 }
