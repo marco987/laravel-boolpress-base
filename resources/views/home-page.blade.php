@@ -3,7 +3,10 @@
 @section('content')
 
   <div class="box-ultimipost">
-    <h2>Ultimi 5 post</h2>
+    <h2>
+      <a href="{{Route('create.post')}}">Scrivi nuovo post</a><br>
+      Ultimi 5 post >>>
+    </h2>
 
     @foreach ($lastsPost as $lastPost)
 
@@ -11,6 +14,7 @@
         <h5>{{$lastPost -> category -> category}}
           <p class="category-color" style="background-color:{{$lastPost -> category -> category}}"></p>
         </h5>
+        <p><b>{{$lastPost -> title}}</b></p>
         <p>{{$lastPost -> text}}</p>
       </div>
     @endforeach
