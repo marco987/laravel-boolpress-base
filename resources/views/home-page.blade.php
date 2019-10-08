@@ -15,7 +15,7 @@
           <p class="category-color" style="background-color:{{$lastPost -> category -> category}}"></p>
         </h5>
         <p><b>{{$lastPost -> title}}</b></p>
-        <p>{{$lastPost -> text}}</p>
+        <p>{!!$lastPost -> text!!}</p>
       </div>
     @endforeach
 

@@ -9,7 +9,7 @@
 
       <div class="box">
         <h5>{{$post -> title}}</h5>
-        <p>{{$post -> text}}</p>
+        <p>{!!$post -> text!!}</p>
         <a href="{{Route('edit.post', $post -> id)}}">Modifica post</a>
         <a href="{{Route('destroy.post', $post -> id)}}">Elimina post</a>
       </div>
