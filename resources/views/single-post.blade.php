@@ -3,13 +3,14 @@
 @section('content')
 
   <div class="box-categoria">
-    <h2>Categoria {{$posts -> category -> category}}</h2>
-    <p class="category-color" style="background-color:{{$posts -> category -> category}}"></p>
+    <h2>Categoria {{$post -> category -> category}}</h2>
+    <p class="category-color" style="background-color:{{$post -> category -> category}}"></p>
     <a href="{{Route('home-page')}}">Back home</a>
 
       <div class="box">
-        <h5>{{$posts -> title}}</h5>
-        <p>{{$posts -> text}}</p>
+        <h5>{{$post -> title}}</h5>
+        <p>{{$post -> text}}</p>
+        <a href="{{Route('destroy.post', $post -> id)}}">Elimina post</a>
       </div>
 
   </div>

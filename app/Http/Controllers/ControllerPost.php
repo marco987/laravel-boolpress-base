@@ -9,19 +9,6 @@ use App\Category;
 class ControllerPost extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-      // $posts = Post::all();
-      // dd($posts);
-      //
-      // return view('category-home', compact('posts'));
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -58,11 +45,9 @@ class ControllerPost extends Controller
 
     public function showSinglePost($id)
     {
-      //$category = Category::findOrFail($id);
-      $posts = Post::where('id', $id)->first();
-      //dd($posts);
+      $post = Post::where('id', $id)->first();
 
-      return view('single-post', compact('posts'));
+      return view('single-post', compact('post'));
     }
 
     /**
@@ -96,6 +81,9 @@ class ControllerPost extends Controller
      */
     public function destroy($id)
     {
-        //
+      $post = Post::findOrFail($id);
+      $post -> delete();
+
+      return redirect('/');
     }
 }
