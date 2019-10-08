@@ -15,9 +15,10 @@ class ControllerPost extends Controller
      */
     public function index()
     {
-      $posts = Post::all();
-
-      return view('home-page', compact('posts'));
+      // $posts = Post::all();
+      // dd($posts);
+      //
+      // return view('category-home', compact('posts'));
     }
 
     /**
@@ -49,7 +50,10 @@ class ControllerPost extends Controller
      */
     public function show($id)
     {
-        //
+      $category = Category::findOrFail($id);
+      $posts = Post::where('category_id', $id)->get();
+
+      return view('category-home', compact('category', 'posts'));
     }
 
     /**

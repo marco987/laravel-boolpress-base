@@ -9,6 +9,6 @@ use App\Post;
 $factory->define(Post::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence(3),
-        'text' => $faker->paragraph(5)
+        'text' => $faker->paragraph(3)
     ];
 });
