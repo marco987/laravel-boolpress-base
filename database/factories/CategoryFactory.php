@@ -8,6 +8,6 @@ use App\Category;
 
 $factory->define(Category::class, function (Faker $faker) {
     return [
-        'category' => $faker->colorName
+        'category' => $faker->unique()->colorName
     ];
 });
