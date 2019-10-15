@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PostShipped;
 
 class ControllerPost extends Controller
 {
@@ -87,7 +89,11 @@ class ControllerPost extends Controller
         'title' => 'required',
         'text' => 'required'
       ]);
-      Post::whereId($id) -> update($datiVerificati);
+      $post = Post::whereId($id);
+
+      $post -> update($datiVerificati);
+
+      Mail::to('prova@email.it')->send(new PostShipped($post));
 
       return redirect('/');
     }
