@@ -89,7 +89,7 @@ class ControllerPost extends Controller
         'title' => 'required',
         'text' => 'required'
       ]);
-      $post = Post::whereId($id);
+      $post = Post::findOrFail($id);
 
       $post -> update($datiVerificati);
 
